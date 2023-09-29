@@ -1,0 +1,28 @@
+{% include "header.html" %}
+<style>
+    .card{
+        display: flex;
+        float: left;
+        left: 10%;
+        right:10%;
+        margin:  2rem 2rem;
+    }
+    img{
+        float: left;
+        height: 180px;
+    }
+
+    .card-body{
+        float: left;
+    }
+</style>
+{% for b in blog %}
+<div class="card mt-5" style="width: 18rem;">
+    <img src="{{b.image.url}}" class="card-img-top" alt="">
+    <div class="card-body">
+      <h5 class="card-title">{{b.title}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="{% url "details" b.blog_slug %}" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+  {% endfor %}

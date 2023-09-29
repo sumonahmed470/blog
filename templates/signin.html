@@ -1,0 +1,27 @@
+{% include "header.html" %}
+
+
+<div class="container">
+        
+    {% for message in messages %}
+    <div class="alert {{ message.tags }}">
+   {{message}}
+    </div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="signin" method="POST">
+                {% csrf_token %}
+            <h1 class="text-center">User Login</h1>
+    
+        
+                <input type="text" class="form-control" name="username" placeholder="username" required><br>
+                <input type="password" class="form-control" name="password" placeholder="password"   required><br>
+                <button type="submit" class="btn btn-primary">Loign</button>
+            </form>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
